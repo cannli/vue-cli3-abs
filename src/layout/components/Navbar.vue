@@ -1,8 +1,12 @@
 <template>
   <div class="navbar">
     <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" v-show="!activeComp"/>
-    <logo v-show="activeComp" class="activeComp_logo"/>
+    <logo v-show="activeComp" :collapse="false" :logoBJ="true" class="activeComp_logo"/>
     <!--<breadcrumb class="breadcrumb-container"/>-->
+  <!--  <div  class="activeComp_logo">
+      <img v-if="logo" :src="logo" class="sidebar-logo">
+      <h1 v-else class="sidebar-title">{{ title }} </h1>
+    </div>-->
 
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="display: inline-block">
       <el-menu-item index="1">我的工作台</el-menu-item>

@@ -170,6 +170,12 @@
       transition: none;
     }
   }
+  .allHideSide{
+    .main-container{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
 }
 
 // when menu collapsed

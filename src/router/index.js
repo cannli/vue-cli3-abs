@@ -65,8 +65,6 @@ export const constantRoutes = [
       meta: {systemName: 'project'}
     }]
   },
-
-
   {
     path: '/example',
     component: Layout,

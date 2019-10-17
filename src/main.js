@@ -2,9 +2,12 @@ import Vue from 'vue'
 
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+// import ElementUI from 'element-ui'
+// import 'element-ui/lib/theme-chalk/index.css'
+// import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+
+import './core/use'
+import './core/element/index.js'
 
 import '@/styles/index.scss' // global css
 
@@ -29,7 +32,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // set ElementUI lang to EN
-Vue.use(ElementUI, { locale })
+// Vue.use(ElementUI, { locale })
 
 // 本地环境
 // window.absContext = (window.location.port === '6565' ? 'http://localhost:9092' : '') + '/abs-gateway/abs'
