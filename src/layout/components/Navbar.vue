@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
-    <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar"/>
-
+    <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" v-show="!activeComp"/>
+    <logo v-show="activeComp" class="activeComp_logo"/>
     <!--<breadcrumb class="breadcrumb-container"/>-->
 
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="display: inline-block">
@@ -40,11 +40,12 @@
   import {mapGetters} from 'vuex'
   import Breadcrumb from '@/components/Breadcrumb'
   import Hamburger from '@/components/Hamburger'
-
+import Logo from './Sidebar/Logo'
   export default {
     components: {
       Breadcrumb,
-      Hamburger
+      Hamburger,
+      Logo
     },
     data() {
       return {
@@ -63,7 +64,10 @@
         'sidebar',
         'avatar',
         'menuSide'
-      ])
+      ]),
+      activeComp(){
+        return this.$route.meta.side
+      }
     },
     mounted() {
       // setTimeout(() => {
@@ -93,7 +97,10 @@
     position: relative;
     background: #fff;
     box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
-
+.activeComp_logo{
+  width: 200px;
+  display: inline-block;
+}
     .hamburger-container {
       line-height: 60px;
       height: 100%;
