@@ -43,7 +43,16 @@
   }
 }
 
-//
+// 分割线
 .el-divider--horizontal{
   margin: 15px 0;
 }
+
+// form 的 label
+ .el-form-item--small .el-form-item__label{
+  line-height: 15px
+}
+.el-form-item--small.el-form-item {
+  margin-bottom: 15px;
+}
+

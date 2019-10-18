@@ -232,7 +232,6 @@
         width: 6px;
         height: 18px;
         background: $color-subject;
-        border-radius: 3px;
         @include Absolute(50%, 0, 0, -50%);
       }
       .title-text {

@@ -27,7 +27,7 @@ export default function fetch(options) {
         // 'X-Requested-With': 'XMLHttpRequest',
         // 'Content-Type': 'application/json',
         // 'Accept': 'application/json,text/plain,*/*',
-      //  'userType': '3'
+        //  'userType': '3'
       }
     })
     // instance.interceptors.request.use(options => {
@@ -42,11 +42,11 @@ export default function fetch(options) {
     //   Promise.reject(error);
     // })
     //请求处理
-    instance(options).then(({data: {code, msg, data, total}}) => {
+    instance(options).then(({data: {code, msg, data, page}}) => {
       console.info(data);
       // 请求成功时,根据业务判断状态
       if (code == 200) {
-        resolve({code, msg, data, total})
+        resolve({code, msg, data, page})
         return false
       } else {
         //    setUserInfo(null)

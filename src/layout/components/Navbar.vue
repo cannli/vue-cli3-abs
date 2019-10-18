@@ -1,14 +1,22 @@
 <template>
   <div class="navbar">
     <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" v-show="!activeComp"/>
-    <logo v-show="activeComp" :collapse="false" :logoBJ="true" class="activeComp_logo"/>
+    <!--<logo v-show="activeComp" :collapse="false" :logoBJ="true" class="activeComp_logo"/>-->
     <!--<breadcrumb class="breadcrumb-container"/>-->
-  <!--  <div  class="activeComp_logo">
-      <img v-if="logo" :src="logo" class="sidebar-logo">
-      <h1 v-else class="sidebar-title">{{ title }} </h1>
-    </div>-->
+      <div  class="activeComp_logo" v-show="activeComp">
+       <!-- <img v-if="logo" :src="logo" class="sidebar-logo">-->
+        <h1 class="sidebar-title">资产ABS</h1>
+      </div>
 
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="display: inline-block">
+    <el-menu
+      :default-active="activeIndex"
+      class="el-menu-demo"
+      mode="horizontal"
+      :background-color="variables.menuBg"
+      :text-color="variables.menuText"
+      :active-text-color="'#ffffff'"
+      @select="handleSelect"
+      style="display: inline-block">
       <el-menu-item index="1">我的工作台</el-menu-item>
       <el-menu-item v-for="x in myMenuSide" :index="x.pageMenu.toString()" :key="x.pageMenu">{{x.names}}</el-menu-item>
     </el-menu>
@@ -44,7 +52,9 @@
   import {mapGetters} from 'vuex'
   import Breadcrumb from '@/components/Breadcrumb'
   import Hamburger from '@/components/Hamburger'
-import Logo from './Sidebar/Logo'
+  import Logo from './Sidebar/Logo'
+  import variables from '@/styles/variables.scss'
+
   export default {
     components: {
       Breadcrumb,
@@ -69,9 +79,12 @@ import Logo from './Sidebar/Logo'
         'avatar',
         'menuSide'
       ]),
-      activeComp(){
+      activeComp() {
         return this.$route.meta.side
-      }
+      },
+      variables() {
+        return variables
+      },
     },
     mounted() {
       // setTimeout(() => {
@@ -95,16 +108,28 @@ import Logo from './Sidebar/Logo'
 </script>
 
 <style lang="scss" scoped>
+  .navbar .el-menu-item.is-active{
+    background: #409EFF !important;
+    border-bottom: none;
+    font-weight: bold;
+  }
   .navbar {
     height: 60px;
     overflow: hidden;
     position: relative;
-    background: #fff;
-    box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
-.activeComp_logo{
-  width: 200px;
-  display: inline-block;
-}
+    background: #00243b;
+    border-bottom: 1px solid #185881;
+    .activeComp_logo {
+      width: 200px;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 20px;
+      .sidebar-title{
+        margin: 0;
+        color: #8cc5ff;
+        line-height: 60px;
+      }
+    }
     .hamburger-container {
       line-height: 60px;
       height: 100%;
