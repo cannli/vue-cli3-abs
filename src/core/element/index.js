@@ -46,6 +46,7 @@ import {
   Steps,
   Submenu,
   Switch,
+  Scrollbar,
   Table,
   TableColumn,
   TabPane,
@@ -56,7 +57,7 @@ import {
   Upload,
   Image
 } from 'element-ui'
-
+Vue.use(Scrollbar)
 Vue.use(PageHeader)
 Vue.use(Pagination)
 Vue.use(Dialog)

@@ -1,23 +1,19 @@
 import Vue from 'vue'
-
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
-
-// import ElementUI from 'element-ui'
-// import 'element-ui/lib/theme-chalk/index.css'
 // import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 
 import './core/use'
 import './core/element/index.js'
-
-import '@/styles/index.scss' // global css
-
+import ku from './utils/vueInstallStore'
 import App from './App'
 import store from './store'
 import router from './router'
 
+import '@/styles/index.scss' // global css
+
 import '@/icons' // icon
 import '@/permission' // permission control
-
+Vue.use(ku)
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -26,11 +22,11 @@ import '@/permission' // permission control
  * Currently MockJs will be used in the production environment,
  * please remove it before going online! ! !
  */
-import { mockXHR } from '../mock'
-if (process.env.NODE_ENV === 'production') {
-  mockXHR()
-}
-
+// import { mockXHR } from '../mock'
+// if (process.env.NODE_ENV === 'production') {
+//   mockXHR()
+// }
+// console.log(process.env.NODE_ENV,'process.env.NODE_ENV')
 // set ElementUI lang to EN
 // Vue.use(ElementUI, { locale })
 

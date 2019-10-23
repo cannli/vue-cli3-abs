@@ -57,12 +57,14 @@ export const constantRoutes = [
   {
     path: '/overview/',
     component: Layout,
+    name: '项目概况',
     redirect: 'baseInfo',
+    meta: {systemName: 'project', title: '项目概况', breadcrumb: true},
     children: [{
       path: 'baseInfo',
       name: '项目基本信息',
       component: () => import('@/views/overview/baseInfo/index'),
-      meta: {systemName: 'project'}
+      meta: {systemName: 'project', title: '项目基本信息', breadcrumb: true}
     }]
   },
   {

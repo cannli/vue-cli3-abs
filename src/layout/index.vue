@@ -49,10 +49,8 @@
     mounted() {
       /*getMenuList()*/
       console.log(this.$route, 'this.$route')
-      this.$store.commit('common/set_projectId', 'cl00385')
+      this.$store.dispatch('common/getFlagsData')
       this.$store.dispatch('common/getMenuList')
-
-
     },
     methods: {
       handleClickOutside() {
@@ -71,6 +69,7 @@
     position: relative;
     height: 100%;
     width: 100%;
+    min-width: 1200px;
     &.mobile.openSidebar {
       position: fixed;
       top: 0;

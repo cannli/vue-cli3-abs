@@ -56,3 +56,26 @@
   margin-bottom: 15px;
 }
 
+.el-table--mini, .el-table--small, .el-table__expand-icon {
+  font-size: 14px;
+}
+// button
+.el-button{
+  border-radius: 0;
+}
+.el-button--text{
+  padding: 0 ;
+  font-size: 14px;
+}
+
+// table
+.el-table th{
+  background: #00a2ff;
+  color: #ffffff;
+}
+
+// input
+.el-input__inner{
+  border-radius: 0;
+}
+

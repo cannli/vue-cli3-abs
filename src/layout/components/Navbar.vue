@@ -2,11 +2,11 @@
   <div class="navbar">
     <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" v-show="!activeComp"/>
     <!--<logo v-show="activeComp" :collapse="false" :logoBJ="true" class="activeComp_logo"/>-->
-    <!--<breadcrumb class="breadcrumb-container"/>-->
-      <div  class="activeComp_logo" v-show="activeComp">
-       <!-- <img v-if="logo" :src="logo" class="sidebar-logo">-->
-        <h1 class="sidebar-title">资产ABS</h1>
-      </div>
+   <!-- <breadcrumb class="breadcrumb-container"/>-->
+    <div class="activeComp_logo" v-show="activeComp">
+      <!-- <img v-if="logo" :src="logo" class="sidebar-logo">-->
+      <h1 class="sidebar-title">资产ABS</h1>
+    </div>
 
     <el-menu
       :default-active="activeIndex"
@@ -101,18 +101,19 @@
         this.$router.push(`/login?redirect=${this.$route.fullPath}`)
       },
       handleSelect(key, keyPath) {
-        console.log(key, keyPath);
+        console.log(key);
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  .navbar .el-menu-item.is-active{
+  .navbar .el-menu-item.is-active {
     background: #409EFF !important;
-    border-bottom: none;
+    border-bottom: 4px solid #ffffff;
     font-weight: bold;
   }
+
   .navbar {
     height: 60px;
     overflow: hidden;
@@ -124,7 +125,7 @@
       display: inline-block;
       vertical-align: top;
       padding: 0 20px;
-      .sidebar-title{
+      .sidebar-title {
         margin: 0;
         color: #8cc5ff;
         line-height: 60px;
