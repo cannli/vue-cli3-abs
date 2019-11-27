@@ -23,9 +23,11 @@ Vue.use(ku)
  * please remove it before going online! ! !
  */
 // import { mockXHR } from '../mock'
-// if (process.env.NODE_ENV === 'production') {
-//   mockXHR()
-// }
+// alert(process.env.NODE_ENV)
+if (process.env.NODE_ENV === 'production') {
+ // mockXHR()
+
+}
 // console.log(process.env.NODE_ENV,'process.env.NODE_ENV')
 // set ElementUI lang to EN
 // Vue.use(ElementUI, { locale })
